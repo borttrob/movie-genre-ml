@@ -4,8 +4,23 @@ Boris Terentiev
 October 4th, 2018
 
 ## Proposal
+Background Information
+
+Algorithms based on machine learning have increased the state of the art performance in multiple domains such as image and text recognition. We can say that we know how to design an algorithm that performs well on image recognition and transfer learning made it easy integrate this algorithms in your own decision pipeline. The problem I encountered at my workplace is that real world datasets contain more information than only the image or only a text based description, but rather a combination of images, descriptions of different kind, kpi based information and sets of raw sensory data. For each of information, e.g. image (TODO search for papers to reference) or description, there is a plethora of literature how to build an estimator that is based on a single information. But there doesn't seem to be much literature how to combine these simple estimators (TODO search for literature and reference some possibilities - e.g. search in the udacity document for the topic)
+
+
+
+(TODO when resubmitting add commet that this is not about sentiment analysis but combining estimators)
+
+
+
 ### Problem Statement
+
 Movies are typically classified into genres, i.e. drama, comedy, thriller, etc. For marketing purposes studios create a plethora of marketing material such as trailers, posters and merchandise with the intention to give a sense to the viewer what to expect from the movie, especially the genre. Humans are trained to distinguish the little cues in a poster, e.g. smiling people, a dark tone of the poster or the appearance of Jack Black to understand the sentiment and ultimately the genre. I want to use current Machine Learning techniques to see if it is possible to train a machine to make sense of this little cues.
+
+The basic idea to tackle this problem is to use multiple (presumably) weak classifiers and create a better performing classifier by combining the weak classifiers. The weak classifiers shall be based on a small piece of movie information e.g. the poster, tags, cast, or the description of the movie (the final implementation may rely only on a subset of these). This way I can use specialized architectures and techniques, e.g. transfer learning for image recognition. 
+
+
 
 The problem I have chosen is rather synthetic and I can't imagine that this problem occurs in real live, nevertheless the solution might be interesting for real life.
 
@@ -15,8 +30,6 @@ The problem I have chosen is rather synthetic and I can't imagine that this prob
 Summarized I am going to use a dataset from MovieLens and extend this dataset by data retrieved from tmdb.
 
 ### Solution Statement
-The basic idea to tackle this problem is to use multiple (presumably) weak classifiers and create a better performing classifier by combining the weak classifiers. The weak classifiers shall be based on a small piece of movie information e.g. the poster, tags, cast, or the description of the movie (the final implementation may rely only on a subset of these). This way I can use specialized architectures and techniques, e.g. transfer learning for image and text classification for single subtasks. 
-
 More specifically:
 
 The first goal is to examine if a deep neural network (DNN) trained by means of transfer learning is able to get a sense of the cues in a movie posters and to make better predictions than a random model. A possible problem may be that poster styles change over time significantly, e.g. a poster for Ben Hur from 1959 could be a poster for a light-hearted comedy of today. Therefore it may be sensible to restrict the time frame.
