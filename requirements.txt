@@ -1,0 +1,11 @@
+jupyter
+notebook
+keras
+matplotlib
+notebook
+numpy
+pandas
+Pillow
+scikit-learn
+scipy
+tensorflow-gpu
